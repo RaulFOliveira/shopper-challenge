@@ -1,16 +1,16 @@
-version: '3.8'
-
 services:
-  mysql:
-    image: mysql:8.1
-    container_name: mysql
+  postgres:
+    image: postgres:13
+    container_name: postgres_db
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: shopper
+      - POSTGRES_USER=johndoe
+      - POSTGRES_PASSWORD=randompassword
+      - POSTGRES_DB=mydb
     ports:
-      - "3306:3306"
+      - "5432:5432"
+    restart: always
     volumes:
-      - mysql-data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  mysql-data:
+  postgres_data:

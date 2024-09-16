@@ -9,8 +9,8 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = "mysql://root:root@localhost:3306/shopper"
+  provider = "postgresql"
+  url      = "postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
 }
 
 enum MeasureType {
